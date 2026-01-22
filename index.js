@@ -10,6 +10,10 @@ document.getElementById("formSaida").addEventListener("submit", function (event)
    criarSaida()
 })
 
+var iTotalEntradas = 0;
+var iTotalSaidas   = 0;
+var iLucro         = 0;
+
 function criarEntrada() {
   const oEntrada = {
     tipo: "Entradas",
@@ -25,6 +29,7 @@ function criarEntrada() {
 
   alert("Entrada salva com sucesso!")
   enviarEntrada(oEntrada)
+  showMenu();
 }
 
 function criarSaida() {
@@ -41,11 +46,54 @@ function criarSaida() {
 
   alert("Saída salva com sucesso!")
   enviarEntrada(oSaida)
+  showMenu();
+}
+
+async function buscarDadosResumo() {
+   const aEntradas = await fetch("https://script.google.com/macros/s/AKfycby4LpfDvjKKKjgIpL220okBmVcfi-adioKkRAEQ5RnjyhlEtd29dwj5d9D5GAKhwAjUKA/exec?tipo=Entradas");
+   const aSaidas   = await fetch("https://script.google.com/macros/s/AKfycby4LpfDvjKKKjgIpL220okBmVcfi-adioKkRAEQ5RnjyhlEtd29dwj5d9D5GAKhwAjUKA/exec?tipo=Saidas");
+
+   const dados = {
+      aEntradas: await aEntradas.json(),
+      aSaidas:   await aSaidas.json()
+   };
+
+   for(let oEntrada of dados.aEntradas) {
+      iTotalEntradas += oEntrada.valor
+   }
+
+   for(let oSaida of dados.aSaidas) {      
+      iTotalSaidas += oSaida.valor
+   }   
+
+   iLucro = iTotalEntradas - iTotalSaidas;
+
+   document.getElementById("totalSaidas").textContent = `R$ ${iTotalSaidas}`;
+   document.getElementById("totalEntradas").textContent = `R$ ${iTotalEntradas}`;
+   document.getElementById("totalLucro").textContent = `R$ ${iLucro}`;
 }
 
 function enviarEntrada(oEntrada) {
-   fetch("https://script.google.com/macros/s/AKfycbxLcZjpFrlwfqyZIFA-bGPO7Lh4nGUhzTM9FPqfjNDG5X_AVOboysq7DwdEeKm1pLjCPg/exec", {
+   fetch("https://script.google.com/macros/s/AKfycby4LpfDvjKKKjgIpL220okBmVcfi-adioKkRAEQ5RnjyhlEtd29dwj5d9D5GAKhwAjUKA/exec", {
       method: "POST",
       body: JSON.stringify(oEntrada)
    });
 }
+
+function showMenu() {
+   document.getElementById('containerEntrada').style.display = 'none';
+   document.getElementById('containerSaida').style.display = 'none';
+   document.getElementById('containerMenu').style.display = 'block';
+}
+
+function showFormEntrada() {
+   document.getElementById('containerEntrada').style.display = 'block';
+   document.getElementById('containerMenu').style.display = 'none';
+}
+
+function showFormSaida() {
+   document.getElementById('containerSaida').style.display = 'block';
+   document.getElementById('containerMenu').style.display = 'none';
+}
+
+buscarDadosResumo();

@@ -1,3 +1,7 @@
+.w-60 {
+   width: 60%;
+}
+
 #saidas {
    color: red;
 }
@@ -11,7 +15,7 @@
 }
 
 body {
-   background-color: rgb(219, 142, 209);
+   background-color: rgb(45, 45, 45);
 }
 
 button {

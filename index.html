@@ -12,23 +12,23 @@
 <body>
 
 <div class="container mt-5" id="containerMenu">
-   <div class="d-flex">
-      <div class="d-flex me-5" id="saidas">
-         <h2>Saídas:</h2>
+   <div class="d-flex flex-column">
+      <div class="d-flex" id="saidas">
+         <h2 class="me-2">Saídas:</h2>
          <h2 id="totalSaidas"></h2>
       </div>
       <div class="d-flex" id="entradas">
-         <h2>Entradas:</h2>
+         <h2 class="me-2">Entradas:</h2>
          <h2 id="totalEntradas"></h2>
       </div>
    </div>
    <div class="d-flex" id="lucro">
-      <h2>Lucro:</h2>
+      <h2 class="me-2">Restante:</h2>
       <h2 id="totalLucro"></h2>
    </div>
-   <div class="d-flex justify-content-around">
-      <button onclick="showFormEntrada()">Registrar Entrada</button>
-      <button onclick="showFormSaida()">Registrar Saída</button>
+   <div class="d-flex align-items-center flex-column mt-5">
+      <button class="w-60 border-0 rounded-3 bg-success text-white" onclick="showFormEntrada()">Registrar Entrada</button>
+      <button class="mt-5 w-60 border-0    rounded-3 bg-success text-white" onclick="showFormSaida()">Registrar Saída</button>
    </div>
 </div>
 
@@ -73,9 +73,10 @@
       </select>
    </div>
 
-   <button type="submit" class="btn btn-success w-100">
+   <button type="submit" class="btn btn-success w-100 h-25 mb-2">
       Salvar Entrada
    </button>
+   <button onclick="fecharFormulario()" type="button" class="btn btn-danger w-100 h-25">Voltar</button>
    </form>
 </div>
 
@@ -109,9 +110,10 @@
       />
    </div>   
 
-   <button type="submit" class="btn btn-success w-100">
+   <button type="submit" class="btn btn-success w-100 h-25 mb-2">
       Salvar Saída
    </button>
+   <button type="button" onclick="fecharFormulario()" class="btn btn-danger w-100 h-25">Voltar</button>
    </form>
 </div>
 

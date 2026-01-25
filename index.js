@@ -80,6 +80,10 @@ function enviarEntrada(oEntrada) {
    });
 }
 
+function fecharFormulario() {
+   return showMenu();
+}
+
 function showMenu() {
    document.getElementById('containerEntrada').style.display = 'none';
    document.getElementById('containerSaida').style.display = 'none';

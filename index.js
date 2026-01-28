@@ -49,30 +49,6 @@ function criarSaida() {
   showMenu();
 }
 
-async function buscarDadosResumo() {
-   const aEntradas = await fetch("https://script.google.com/macros/s/AKfycbywwaqcqs_FOp2t6hlarFD_zrJ4ABLPIIUKtkHPOZMxROJQOWOMjyYbzplx8zme2fOeMQ/exec?tipo=Movimentações");
-   const aSaidas   = await fetch("https://script.google.com/macros/s/AKfycbywwaqcqs_FOp2t6hlarFD_zrJ4ABLPIIUKtkHPOZMxROJQOWOMjyYbzplx8zme2fOeMQ/exec?tipo=Movimentações");
-
-   const dados = {
-      aEntradas: await aEntradas.json(),
-      aSaidas:   await aSaidas.json()
-   };
-
-   for(let oEntrada of dados.aEntradas) {
-      iTotalEntradas += oEntrada.valor
-   }
-
-   for(let oSaida of dados.aSaidas) {      
-      iTotalSaidas += oSaida.valor
-   }   
-
-   iLucro = iTotalEntradas - iTotalSaidas;
-
-   document.getElementById("totalSaidas").textContent = `R$ ${iTotalSaidas}`;
-   document.getElementById("totalEntradas").textContent = `R$ ${iTotalEntradas}`;
-   document.getElementById("totalLucro").textContent = `R$ ${iLucro}`;
-}
-
 function enviarEntrada(oEntrada) {
    fetch("https://script.google.com/macros/s/AKfycbywwaqcqs_FOp2t6hlarFD_zrJ4ABLPIIUKtkHPOZMxROJQOWOMjyYbzplx8zme2fOeMQ/exec", {
       method: "POST",

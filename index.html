@@ -42,12 +42,11 @@
    </div>
 
    <div class="mb-3">
-      <label class="form-label">Serviço</label>
+      <label class="form-label">Descrição</label>
       <input
          type="text"
          class="form-control"
-         id="servico"
-         placeholder="Ex: Mão, Pé, Alongamento"
+         id="servico"         
          required
       />
    </div>
@@ -61,17 +60,7 @@
          step="0.01"
          required
       />
-   </div>
-
-   <div class="mb-3">
-      <label class="form-label">Pagamento</label>
-      <select class="form-select" id="pagamento" required>
-         <option value="">Selecione</option>
-         <option value="Pix">Pix</option>
-         <option value="Dinheiro">Dinheiro</option>
-         <option value="Cartão">Cartão</option>
-      </select>
-   </div>
+   </div>   
 
    <button type="submit" class="btn btn-success w-100 h-25 mb-2">
       Salvar Entrada
@@ -108,7 +97,17 @@
          step="0.01"
          required
       />
-   </div>   
+   </div>  
+   
+   <div class="mb-3">
+      <label class="form-label">Pagamento</label>
+      <select class="form-select" id="pagamento" required>
+         <option value="">Selecione</option>
+         <option value="Pix">Pix</option>
+         <option value="Dinheiro">Dinheiro</option>
+         <option value="Cartão">Cartão</option>
+      </select>
+   </div>
 
    <button type="submit" class="btn btn-success w-100 h-25 mb-2">
       Salvar Saída

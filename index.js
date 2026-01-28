@@ -19,8 +19,7 @@ function criarEntrada() {
     tipo: "Entradas",
     data: document.getElementById("data").value,
     descricao: document.getElementById("servico").value,
-    valor: Number(document.getElementById("valor").value),
-    pagamento: document.getElementById("pagamento").value
+    valor: Number(document.getElementById("valor").value)    
   }
 
   console.log("Entrada criada:", oEntrada)
@@ -37,7 +36,8 @@ function criarSaida() {
     tipo: "Saidas",
     data: document.getElementById("dataSaida").value,
     descricao: document.getElementById("descricaoSaida").value,
-    valor: Number(document.getElementById("valorSaida").value),    
+    valor: Number(document.getElementById("valorSaida").value),
+    pagamento: document.getElementById("pagamento").value
   }
 
   console.log("Saída criada:", oSaida)
@@ -50,8 +50,8 @@ function criarSaida() {
 }
 
 async function buscarDadosResumo() {
-   const aEntradas = await fetch("https://script.google.com/macros/s/AKfycby4LpfDvjKKKjgIpL220okBmVcfi-adioKkRAEQ5RnjyhlEtd29dwj5d9D5GAKhwAjUKA/exec?tipo=Entradas");
-   const aSaidas   = await fetch("https://script.google.com/macros/s/AKfycby4LpfDvjKKKjgIpL220okBmVcfi-adioKkRAEQ5RnjyhlEtd29dwj5d9D5GAKhwAjUKA/exec?tipo=Saidas");
+   const aEntradas = await fetch("https://script.google.com/macros/s/AKfycbywwaqcqs_FOp2t6hlarFD_zrJ4ABLPIIUKtkHPOZMxROJQOWOMjyYbzplx8zme2fOeMQ/exec?tipo=Movimentações");
+   const aSaidas   = await fetch("https://script.google.com/macros/s/AKfycbywwaqcqs_FOp2t6hlarFD_zrJ4ABLPIIUKtkHPOZMxROJQOWOMjyYbzplx8zme2fOeMQ/exec?tipo=Movimentações");
 
    const dados = {
       aEntradas: await aEntradas.json(),
@@ -74,7 +74,7 @@ async function buscarDadosResumo() {
 }
 
 function enviarEntrada(oEntrada) {
-   fetch("https://script.google.com/macros/s/AKfycby4LpfDvjKKKjgIpL220okBmVcfi-adioKkRAEQ5RnjyhlEtd29dwj5d9D5GAKhwAjUKA/exec", {
+   fetch("https://script.google.com/macros/s/AKfycbywwaqcqs_FOp2t6hlarFD_zrJ4ABLPIIUKtkHPOZMxROJQOWOMjyYbzplx8zme2fOeMQ/exec", {
       method: "POST",
       body: JSON.stringify(oEntrada)
    });

@@ -1,23 +1,23 @@
-.w-48 {
+/* .w-48 {
    width: 48%;
 }
-
+*/
 .receitas {
-   box-shadow: -3px 2px rgb(12, 204, 12);
+   box-shadow: -3px 0 rgb(12, 204, 12);
 }
 
 .despesas {
-   box-shadow: -3px 2px rgb(215, 12, 12);
+   box-shadow: -3px 0 rgb(215, 12, 12);
 }
 
 .saldo {
-   box-shadow: -3px 2px rgb(205, 215, 12);
+   box-shadow: -3px 0 rgb(205, 215, 12);
 }
 
 .poupanca {
-   box-shadow: -3px 2px rgb(12, 103, 215);
+   box-shadow: -3px 0 rgb(12, 103, 215);
 }
-
+/*
 .w-60 {
    width: 60%;
 }
@@ -33,12 +33,11 @@
 #lucro {
    color: greenyellow;
 }
-
+*/
 body {
-   background-color: rgb(45, 45, 45);
-   color: white;
+   background-color: rgb(45, 45, 45);   
 }
-
+/*
 button {
    outline: 0;
    border: 1px solid black;
@@ -47,4 +46,4 @@ button {
    width: 20%;
    font-size: 1.5rem;
    font-weight: bold;
-}
+} */

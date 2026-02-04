@@ -1,3 +1,23 @@
+.w-48 {
+   width: 48%;
+}
+
+.receitas {
+   box-shadow: -3px 2px rgb(12, 204, 12);
+}
+
+.despesas {
+   box-shadow: -3px 2px rgb(215, 12, 12);
+}
+
+.saldo {
+   box-shadow: -3px 2px rgb(205, 215, 12);
+}
+
+.poupanca {
+   box-shadow: -3px 2px rgb(12, 103, 215);
+}
+
 .w-60 {
    width: 60%;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-Br">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,102 +7,127 @@
 
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
    <link rel="stylesheet" href="index.css"/>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
    <link rel="manifest" href="manifest.json">
 </head>
 <body>
-
-<div class="container mt-5" id="containerMenu">   
-   <div class="d-flex align-items-center flex-column mt-5">
-      <button class="w-60 border-0 rounded-3 bg-success text-white" onclick="showFormEntrada()">Registrar Entrada</button>
-      <button class="mt-5 w-60 border-0    rounded-3 bg-success text-white" onclick="showFormSaida()">Registrar Saída</button>
-<button class="mt-5 w-60 border-0    rounded-3 bg-success text-white"><a style="text-decoration: none" href="https://docs.google.com/spreadsheets/d/1pRIPmDwgSRQZnxTEMiJbRfEOA-5gz7PeWTLB10DotDI/edit?usp=drivesdk">Abrir planilha</a></button>
+<header class="container p-4">
+   <h4>Resumo</h4>
+   <div class="d-flex justify-content-between flex-wrap gap-2">
+      <div class="receitas px-2 py-1 border w-[48%] rounded">
+         <h6>Receitas</h6>
+         <div class="flex h-100 gap-2">
+            <i class="bi bi-plus bg-green-200 text-black rounded-circle block w-[23%] h-[40%] text-center pb-2"></i>
+            <p class="m-0 font-bold">R$ 10,00</p>
+         </div>
+      </div>
+      <div class="despesas px-2 py-1 border w-48 rounded">
+         <h6>Despesas</h6>
+         <div class="flex h-100 gap-2">
+            <i class="bi bi-dash bg-red-200 text-black rounded-circle block w-[23%] h-[40%] text-center pb-2"></i>
+            <p class="m-0 font-bold">R$ 10,00</p>
+         </div>
+      </div>
+      <div class="saldo px-2 py-1 w-100 border rounded">
+         <h6>Saldo Final</h6>
+         <div class="flex h-100 gap-2">
+            <i class="bi bi-currency-dollar bg-yellow-200 text-black rounded-circle block w-[10%] h-[40%] text-center pb-2"></i>
+            <p class="m-0 font-bold">R$ 10,00</p>
+         </div>
+      </div>
+      <div class="poupanca px-2 py-1 w-100 border rounded">
+         <h6>Poupança</h6>
+         <div class="flex h-100 gap-2">
+            <i class="bi bi-piggy-bank bg-blue-200 text-black rounded-circle block w-[10%] h-[40%] text-center pb-2"></i>
+            <p class="m-0 font-bold">R$ 10,00</p>
+         </div>
+      </div>
    </div>
-</div>
-
-<div class="container mt-5" style="display: none;" id="containerEntrada">
-   <h3 class="mb-4">Nova Entrada</h3>
-
-   <form id="formEntrada">
-   <div class="mb-3">
-      <label class="form-label">Data</label>
-      <input type="date" class="form-control" id="data" required />
+</header>
+<header class="container p-4">
+   <h4>Resumo</h4>
+   <div class="d-flex justify-content-between flex-wrap gap-2">
+      <div class="receitas px-2 py-1 border w-[48%] rounded">
+         <h6>Receitas</h6>
+         <div class="flex h-100 gap-2">
+            <i class="bi bi-plus bg-green-200 text-black rounded-circle block w-[23%] h-[40%] text-center pb-2"></i>
+            <p class="m-0 font-bold">R$ 10,00</p>
+         </div>
+      </div>
+      <div class="despesas px-2 py-1 border w-48 rounded">
+         <h6>Despesas</h6>
+         <div class="flex h-100 gap-2">
+            <i class="bi bi-dash bg-red-200 text-black rounded-circle block w-[23%] h-[40%] text-center pb-2"></i>
+            <p class="m-0 font-bold">R$ 10,00</p>
+         </div>
+      </div>
+      <div class="saldo px-2 py-1 w-100 border rounded">
+         <h6>Saldo Final</h6>
+         <div class="flex h-100 gap-2">
+            <i class="bi bi-currency-dollar bg-yellow-200 text-black rounded-circle block w-[10%] h-[40%] text-center pb-2"></i>
+            <p class="m-0 font-bold">R$ 10,00</p>
+         </div>
+      </div>
+      <div class="poupanca px-2 py-1 w-100 border rounded">
+         <h6>Poupança</h6>
+         <div class="flex h-100 gap-2">
+            <i class="bi bi-piggy-bank bg-blue-200 text-black rounded-circle block w-[10%] h-[40%] text-center pb-2"></i>
+            <p class="m-0 font-bold">R$ 10,00</p>
+         </div>
+      </div>
    </div>
-
-   <div class="mb-3">
-      <label class="form-label">Descrição</label>
-      <input
-         type="text"
-         class="form-control"
-         id="servico"         
-         required
-      />
+</header>
+<header class="container p-4">
+   <h4>Resumo</h4>
+   <div class="d-flex justify-content-between flex-wrap gap-2">
+      <div class="receitas px-2 py-1 border w-[48%] rounded">
+         <h6>Receitas</h6>
+         <div class="flex h-100 gap-2">
+            <i class="bi bi-plus bg-green-200 text-black rounded-circle block w-[23%] h-[40%] text-center pb-2"></i>
+            <p class="m-0 font-bold">R$ 10,00</p>
+         </div>
+      </div>
+      <div class="despesas px-2 py-1 border w-48 rounded">
+         <h6>Despesas</h6>
+         <div class="flex h-100 gap-2">
+            <i class="bi bi-dash bg-red-200 text-black rounded-circle block w-[23%] h-[40%] text-center pb-2"></i>
+            <p class="m-0 font-bold">R$ 10,00</p>
+         </div>
+      </div>
+      <div class="saldo px-2 py-1 w-100 border rounded">
+         <h6>Saldo Final</h6>
+         <div class="flex h-100 gap-2">
+            <i class="bi bi-currency-dollar bg-yellow-200 text-black rounded-circle block w-[10%] h-[40%] text-center pb-2"></i>
+            <p class="m-0 font-bold">R$ 10,00</p>
+         </div>
+      </div>
+      <div class="poupanca px-2 py-1 w-100 border rounded">
+         <h6>Poupança</h6>
+         <div class="flex h-100 gap-2">
+            <i class="bi bi-piggy-bank bg-blue-200 text-black rounded-circle block w-[10%] h-[40%] text-center pb-2"></i>
+            <p class="m-0 font-bold">R$ 10,00</p>
+         </div>
+      </div>
    </div>
-
-   <div class="mb-3">
-      <label class="form-label">Valor (R$)</label>
-      <input
-         type="number"
-         class="form-control"
-         id="valor"
-         step="0.01"
-         required
-      />
-   </div>   
-
-   <button type="submit" class="btn btn-success w-100 h-25 mb-2">
-      Salvar Entrada
-   </button>
-   <button onclick="fecharFormulario()" type="button" class="btn btn-danger w-100 h-25">Voltar</button>
-   </form>
-</div>
-
-<div class="container mt-5" style="display: none;" id="containerSaida">
-   <h3 class="mb-4">Nova Saída</h3>
-
-   <form id="formSaida">
-   <div class="mb-3">
-      <label class="form-label">Data</label>
-      <input type="date" class="form-control" id="dataSaida" required />
+</header>
+<footer class="border-2 border-white h-100 bg-white text-dark sticky-bottom w-full bottom-0 h-30 p-3 rounded-top-4">
+   <h6 class="mb-4">Menu de Ações</h6>
+   <div class="grid grid-cols-3 gap-5 h-100 w-full justify-content-center align-items-center">
+      <div class="flex flex-column align-items-center h-100 text-center">
+         <i class="bi bi-plus bg-gray-200 text-black rounded-circle w-[42%] h-[40%] text-center pb-2"></i>
+         <p class="text-xs">Adicionar</p>
+      </div>
+      <div class="flex flex-column align-items-center h-100 text-center">
+         <i class="bi bi-arrow-down-up text-xs p-1 bg-gray-200 text-black rounded-circle w-[42%] h-[40%] text-center pb-2"></i>
+         <p class="text-xs">Movimentações</p>
+      </div>
+      <div class="flex flex-column align-items-center h-100 text-center">
+         <i class="bi bi-bar-chart-fill p-1 text-xs bg-gray-200 text-black rounded-circle w-[42%] h-[40%] text-center pb-2"></i>
+         <p class="text-xs">Gráficos</p>
+      </div>
    </div>
-
-   <div class="mb-3">
-      <label class="form-label">Descrição</label>
-      <input
-         type="text"
-         class="form-control"
-         id="descricaoSaida"          
-         required
-      />
-   </div>
-
-   <div class="mb-3">
-      <label class="form-label">Valor (R$)</label>
-      <input
-         type="number"
-         class="form-control"
-         id="valorSaida"
-         step="0.01"
-         required
-      />
-   </div>  
-   
-   <div class="mb-3">
-      <label class="form-label">Pagamento</label>
-      <select class="form-select" id="pagamento" required>
-         <option value="">Selecione</option>
-         <option value="Pix">Pix</option>
-         <option value="Dinheiro">Dinheiro</option>
-         <option value="Cartão">Cartão</option>
-      </select>
-   </div>
-
-   <button type="submit" class="btn btn-success w-100 h-25 mb-2">
-      Salvar Saída
-   </button>
-   <button type="button" onclick="fecharFormulario()" class="btn btn-danger w-100 h-25">Voltar</button>
-   </form>
-</div>
-
+</footer>
 <script src="index.js"></script>
 </body>
-</html>l
+</html>

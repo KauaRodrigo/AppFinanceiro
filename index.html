@@ -9,28 +9,33 @@
    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
    <link rel="manifest" href="manifest.json">
 </head>
-<body class="font-bold">
+<body class="font-bold min-h-screen flex flex-col">
+<main class="flex-1">
 <div class="p-4 py-1">
-   <h4 class="mb-2 text-white">Filtros</h4>
-   <select class="border border-white text-white rounded-lg w-30" name="mês" id="mês"></select>
-   <select class="border border-white text-white rounded-lg w-20" name="ano" id="ano"></select>
+   <h4 class="mb-2 ">Filtros</h4>
+   <select class="font-normal text-sm bg-white border border-white  rounded-lg w-30" name="mês" id="mês">
+      <option value="">Selecione</option>
+   </select>
+   <select class="font-normal text-sm bg-white border border-white  rounded-lg w-20" name="ano" id="ano">
+      <option value="">Selecione</option>
+   </select>
 </div>
-<div class="flex flex-col justify-between text-shadow-lg gap-2 px-4 pt-3">
-   <div class="text-white p-2 h-20 w-full border-2 border-red-500 rounded">
+<div class="flex flex-col justify-between gap-2 px-4 pt-3">
+   <div class="despesas bg-white p-2 h-20 w-full border-2 border-white rounded">
       <h4>Vencidos</h4>
       <h1 class="mt-2">10</h1>
    </div>
-   <div class="text-white p-2 h-20 w-full border-2 border-yellow-300 rounded">
+   <div class="saldo bg-white p-2 h-20 w-full border-2 border-white rounded">
       <h4>A vencer</h4>
       <h1 class="mt-2">10</h1>
    </div>
-   <div class="text-white p-2 h-20 w-full border-2 border-green-500 rounded">
+   <div class="receitas bg-white p-2 h-20 w-full border-2 border-white rounded">
       <h4>Pagos</h4>
       <h1 class="mt-2">10</h1>
    </div>
 </div>
 <div class="pt-0 p-4">
-   <h4 class="text-white">Resumo</h4>   
+   <h4 class="">Resumo</h4>   
    <div class="flex flex-wrap gap-2">
       <div class="flex justify-between w-full gap-2">
          <div class="receitas h-20 px-2 py-1 w-full bg-white border-2 border-white rounded">
@@ -64,8 +69,9 @@
       </div>
    </div>
 </div>
-<footer class="border-2 border-white bg-white text-black sticky bottom-0 w-full h-[111px] p-3 rounded-t-md pb-0">
-   <h6 class="mb-4">Menu de Ações</h6>
+</main>
+<footer class="border-2 border-white bg-white text-black sticky bottom-0 w-full h-[111px] p-3 rounded-t-md pb-0 mt-auto">
+   <h6 class="mb-4 font-bold">Menu de Ações</h6>
    <div class="grid grid-cols-3 gap-5 w-full justify-content-center align-items-center">
       <div class="flex flex-col items-center text-center">
          <i class="bi bi-plus cursor-pointer bg-gray-200 text-black rounded-full w-[25px] h-[25px] text-center pb-2"></i>

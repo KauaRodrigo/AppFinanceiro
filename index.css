@@ -17,25 +17,13 @@
 .poupanca {
    box-shadow: -3px 0 rgb(12, 103, 215);
 }
-/*
-.w-60 {
-   width: 60%;
+
+* {
+   box-sizing: border-box;
 }
 
-#saidas {
-   color: red;
-}
-
-#entradas {
-   color: green;
-}
-
-#lucro {
-   color: greenyellow;
-}
-*/
 body {
-   background-color: rgb(45, 45, 45);   
+   background-color: rgb(235, 235, 235)
 }
 /*
 button {

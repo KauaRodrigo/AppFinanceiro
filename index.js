@@ -1,14 +1,14 @@
-document.getElementById("formEntrada").addEventListener("submit", function (event) {
-   event.preventDefault()
+// document.getElementById("formEntrada").addEventListener("submit", function (event) {
+//    event.preventDefault()
 
-   criarEntrada()
-})
+//    criarEntrada()
+// })
 
-document.getElementById("formSaida").addEventListener("submit", function (event) {
-   event.preventDefault()
+// document.getElementById("formSaida").addEventListener("submit", function (event) {
+//    event.preventDefault()
 
-   criarSaida()
-})
+//    criarSaida()
+// })
 
 var iTotalEntradas = 0;
 var iTotalSaidas   = 0;
@@ -76,4 +76,22 @@ function showFormSaida() {
    document.getElementById('containerMenu').style.display = 'none';
 }
 
-buscarDadosResumo();
+function redireciona(sId) {
+   $('.adicionar').each((_, oElemento) => {
+      $(oElemento).show();
+   });
+}
+
+async function buscarDadosResumo() {
+   let oDados = await fetch("https://script.google.com/macros/s/AKfycbz6cLjp6VDjqHR5SBVT6LLxASqBlhwaaYcynmDB6mykVEbRGVcu4L9p74dFJ3KsoFtZCg/exec?req=getResumo&tipo=Resumo");   
+
+   oDados = await oDados.json();
+
+   document.getElementById("totalDespesas").textContent = `R$ ${oDados.totalDespesas}`;
+   document.getElementById("totalReceitas").textContent = `R$ ${oDados.totalReceitas}`;
+   document.getElementById("saldoFinal").textContent = `R$ ${oDados.saldoFinal}`;
+}
+
+$(() => {
+   buscarDadosResumo()
+});
